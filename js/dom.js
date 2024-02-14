@@ -64,9 +64,19 @@ var fadeIn = () => {
         });
     }
 
+    function observerCallbackOut(entries) {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                entry.target.classList.remove('loaded');
+            }
+        });
+    }
+
     const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer2 = new IntersectionObserver(observerCallbackOut, observerOptions);
 
     elementsToLoadIn.forEach((el) => observer.observe(el));
+    elementsToLoadIn.forEach((el) => observer2.observe(el));
 }
 
 

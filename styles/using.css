@@ -178,6 +178,6 @@ body {
     &.loaded {
         opacity: 1;
         transform: translateY(0);
-        transition-delay: 0.33s;
+        transition-delay: 0.3s;
     }
 }
