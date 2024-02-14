@@ -58,6 +58,31 @@ a:hover {
     filter: grayscale(0%) sepia(100%) saturate(1000%) hue-rotate(90deg) brightness(100%) contrast(100%) invert(100%);
 }
 
+.buttimg{
+    height: 88px;
+    cursor: pointer;
+}
+
+.buttonhold {
+    position: absolute;
+    top: 75%;
+    left: 0;
+    right: 0;
+    align-items: center;
+}
+
+.buttonhold img.bi2 {
+    display: none; /* Initially hide the hover image */
+}
+
+.buttonhold:hover img.bi1 {
+    display: none; /* Hide the default image on hover */
+}
+
+.buttonhold:hover img.bi2 {
+    display: block; /* Show the hover image on hover */
+}
+
 .navhold {
     display: flex;
     flex-direction: row;
