@@ -45,7 +45,7 @@ var idColor = () => {
 
 
 var fadeIn = () => {
-    const elementsToLoadIn = new Set([...document.querySelectorAll(".whole"), ...document.querySelectorAll("#title")])
+    const elementsToLoadIn = new Set([...document.querySelectorAll(".whole"), ...document.querySelectorAll("#title"), ...document.querySelectorAll(".buttonhold")])
     elementsToLoadIn.forEach((el) => {
         el.classList.add('loadin');
     });

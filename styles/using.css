@@ -58,29 +58,39 @@ a:hover {
     filter: grayscale(0%) sepia(100%) saturate(1000%) hue-rotate(90deg) brightness(100%) contrast(100%) invert(100%);
 }
 
-.buttimg{
-    height: 88px;
+.buttimg {
+    height: 69px;
     cursor: pointer;
+    opacity: 85%;
 }
 
 .buttonhold {
-    position: absolute;
+    /* position: absolute;
     top: 75%;
     left: 0;
-    right: 0;
+    right: 0; */
+    margin-top: 25px;
     align-items: center;
 }
 
+.buttonhold img.bi1 {
+    display: block;
+    /* Initially hide the hover image */
+}
+
 .buttonhold img.bi2 {
-    display: none; /* Initially hide the hover image */
+    display: none;
+    /* Initially hide the hover image */
 }
 
 .buttonhold:hover img.bi1 {
-    display: none; /* Hide the default image on hover */
+    display: none;
+    /* Hide the default image on hover */
 }
 
 .buttonhold:hover img.bi2 {
-    display: block; /* Show the hover image on hover */
+    display: block;
+    /* Show the hover image on hover */
 }
 
 .navhold {
@@ -204,5 +214,59 @@ body {
         opacity: 1;
         transform: translateY(0);
         transition-delay: 0.3s;
+    }
+}
+
+.p1content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#title {
+
+    color: #FFF;
+    text-align: center;
+    font-family: "lato", sans-serif;
+    font-weight: 300;
+    font-size: 50px;
+    letter-spacing: 10px;
+    margin-top: -60px;
+    padding-left: 10px;
+}
+
+.bounce {
+    animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+    70% {
+        transform: translateY(0%);
+    }
+
+    80% {
+        transform: translateY(-15%);
+    }
+
+    90% {
+        transform: translateY(0%);
+    }
+
+    95% {
+        transform: translateY(-7%);
+    }
+
+    97% {
+        transform: translateY(0%);
+    }
+
+    99% {
+        transform: translateY(-3%);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }
