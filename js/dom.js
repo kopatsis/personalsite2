@@ -11,6 +11,7 @@ var modeswitch = () => {
                 document.querySelectorAll('.inner').forEach(element => {
                     element.style.backgroundColor = '#262C2E'
                 })
+                localStorage.setItem('mode','dark')
             } else {
                 switchlogo.src = './assets/ic4a.png'
                 switchlogo.classList.remove('darkmode')
@@ -18,22 +19,17 @@ var modeswitch = () => {
                 document.querySelectorAll('.inner').forEach(element => {
                     element.style.backgroundColor = '#E9F1F5'
                 })
+                localStorage.setItem('mode','light')
             }
         })
+
+        if(localStorage.getItem('mode') == 'dark'){
+            switchlogo.click();
+        }
     }
 }
 
 var links = [document.querySelector('#link1'), document.querySelector('#link2'), document.querySelector('#link3'), document.querySelector('#link4')]
-
-// let observer = new IntersectionObserver((entries) => {
-//     entries.forEach((entry, i) => {
-//         if (entry.isIntersecting) {
-//             links[i].style.color = '#b10404'
-//         } else {
-//             links[i].style.color = ''
-//         }
-//     });
-// }, { threshold: [0.1] });
 
 
 var idColor = () => {
@@ -82,6 +78,6 @@ var fadeIn = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
     modeswitch()
-    idColor()
+    // idColor()
     fadeIn()
 })
