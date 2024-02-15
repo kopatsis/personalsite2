@@ -55,6 +55,12 @@ a:hover {
     transition: ease 0.25s;
 }
 
+a.activecolor{
+    color: #b10404;
+    font-weight: bold;
+    transition: ease 0.25s;
+}
+
 .footerimg:hover {
     filter: grayscale(0%) sepia(100%) saturate(888%) hue-rotate(90deg) brightness(100%) contrast(100%) invert(100%);
     transition: ease 0.25s;

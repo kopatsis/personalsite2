@@ -29,14 +29,38 @@ var modeswitch = () => {
     }
 }
 
-var links = [document.querySelector('#link1'), document.querySelector('#link2'), document.querySelector('#link3'), document.querySelector('#link4')]
-
-
 var idColor = () => {
 
-    var screens = [document.querySelector('#one'), document.querySelector('#two'), document.querySelector('#three'), document.querySelector('#four')]
+    const screens = [document.querySelector('#title'), document.querySelector('#wh2'), document.querySelector('#wh3'), document.querySelector('#wh4')]
+    const links = {"title": document.querySelector('#link1'), "wh2": document.querySelector('#link2'), "wh3": document.querySelector('#link3'), "wh4": document.querySelector('#link4')}
 
-    // observer.observe(screens)
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.3,
+    };
+
+    function observerCallback(entries) {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                links[entry.target.id].classList.add('activecolor')
+            }
+        });
+    }
+
+    function observerCallbackOut(entries) {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                links[entry.target.id].classList.remove('activecolor')
+            }
+        });
+    }
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer2 = new IntersectionObserver(observerCallbackOut, observerOptions);
+
+    screens.forEach((el) => observer.observe(el));
+    screens.forEach((el) => observer2.observe(el));
 }
 
 
@@ -78,6 +102,6 @@ var fadeIn = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
     modeswitch()
-    // idColor()
+    idColor()
     fadeIn()
 })
