@@ -52,45 +52,52 @@ a {
 a:hover {
     color: #b10404;
     font-weight: bold;
+    transition: ease 0.25s;
 }
 
 .footerimg:hover {
-    filter: grayscale(0%) sepia(100%) saturate(1000%) hue-rotate(90deg) brightness(100%) contrast(100%) invert(100%);
+    filter: grayscale(0%) sepia(100%) saturate(888%) hue-rotate(90deg) brightness(100%) contrast(100%) invert(100%);
+    transition: ease 0.25s;
 }
 
 .buttimg {
     height: 69px;
     cursor: pointer;
-    opacity: 85%;
+    opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
 .buttonhold {
-    /* position: absolute;
-    top: 75%;
-    left: 0;
-    right: 0; */
     margin-top: 25px;
     align-items: center;
 }
 
+/* .buttonhold img {
+
+} */
+
 .buttonhold img.bi1 {
     display: block;
-    /* Initially hide the hover image */
+    opacity: 85%;
+    transition: opacity 0.25s ease;
 }
 
 .buttonhold img.bi2 {
     display: none;
-    /* Initially hide the hover image */
+    opacity: 0;
+    transition: opacity 0.25s ease;
 }
 
 .buttonhold:hover img.bi1 {
     display: none;
-    /* Hide the default image on hover */
+    opacity: 0;
+    transition: opacity 0.25s ease;
 }
 
 .buttonhold:hover img.bi2 {
     display: block;
-    /* Show the hover image on hover */
+    opacity: 85%;
+    transition: opacity 0.25s ease;
 }
 
 .navhold {
