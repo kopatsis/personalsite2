@@ -11,7 +11,7 @@ var modeswitch = () => {
                 document.querySelectorAll('.inner').forEach(element => {
                     element.style.backgroundColor = '#262C2E'
                 })
-                localStorage.setItem('mode','dark')
+                localStorage.setItem('mode', 'dark')
             } else {
                 switchlogo.src = './assets/ic4a.png'
                 switchlogo.classList.remove('darkmode')
@@ -19,11 +19,11 @@ var modeswitch = () => {
                 document.querySelectorAll('.inner').forEach(element => {
                     element.style.backgroundColor = '#E9F1F5'
                 })
-                localStorage.setItem('mode','light')
+                localStorage.setItem('mode', 'light')
             }
         })
 
-        if(localStorage.getItem('mode') == 'dark'){
+        if (localStorage.getItem('mode') !== 'light') {
             switchlogo.click();
         }
     }
@@ -32,7 +32,7 @@ var modeswitch = () => {
 var idColor = () => {
 
     const screens = [document.querySelector('#title'), document.querySelector('#wh2'), document.querySelector('#wh3'), document.querySelector('#wh4')]
-    const links = {"title": document.querySelector('#link1'), "wh2": document.querySelector('#link2'), "wh3": document.querySelector('#link3'), "wh4": document.querySelector('#link4')}
+    const links = { "title": document.querySelector('#link1'), "wh2": document.querySelector('#link2'), "wh3": document.querySelector('#link3'), "wh4": document.querySelector('#link4') }
 
     const observerOptions = {
         root: null,
@@ -99,9 +99,36 @@ var fadeIn = () => {
     elementsToLoadIn.forEach((el) => observer2.observe(el));
 }
 
+const triggerElement = document.getElementById('wh2')
+const targetElements = document.querySelectorAll('.inner')
 
-document.addEventListener("DOMContentLoaded", function () {
-    modeswitch()
-    idColor()
-    fadeIn()
-})
+const topbar = document.querySelector('.navhold')
+const bottombar = document.querySelector('.foothold')
+
+function checkTriggerElementHeight() {
+
+    if (triggerElement.clientHeight + topbar.clientHeight + bottombar.clientHeight > window.innerHeight) {
+        targetElements.forEach(element => element.style.scrollSnapAlign = '');
+    } else {
+        targetElements.forEach(element => element.style.scrollSnapAlign = 'start');
+    }
+}
+
+function checkAfterContentLoaded() {
+    checkTriggerElementHeight();
+    window.removeEventListener('DOMContentLoaded', checkAfterContentLoaded);
+    window.removeEventListener('load', checkAfterContentLoaded);
+}
+
+window.addEventListener('DOMContentLoaded', checkAfterContentLoaded);
+
+window.addEventListener('load', checkAfterContentLoaded);
+
+window.addEventListener('resize', checkTriggerElementHeight);
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+modeswitch()
+idColor()
+fadeIn()
+// })
