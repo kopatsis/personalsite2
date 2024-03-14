@@ -16,11 +16,11 @@
 <body>
   <div class="navhold">
     <nav class="navbar">
-      <ul>
-        <li><a href="#one" id="link1">TOP</a></li>
-        <li><a href="#two" id="link2">ABOUT</a></li>
-        <li><a href="#three" id="link3">PROJECTS</a></li>
-        <li><a href="#four" id="link4">RESUME</a></li>
+      <ul class="banners">
+        <li class="banners"><a href="#one" id="link1">TOP</a></li>
+        <li class="banners"><a href="#two" id="link2">ABOUT</a></li>
+        <li class="banners"><a href="#three" id="link3">PROJECTS</a></li>
+        <li class="banners"><a href="#four" id="link4">RESUME</a></li>
       </ul>
     </nav>
   </div>
@@ -53,14 +53,17 @@
             <img class="headshot" src="./assets/kopatsportrait.jpg">
           </div>
           <div class="biog">
-            
+
             <p>I am an aspiring software engineer and in my final year Computer Science student at Oregon State
               University. I am in the post-baccalaureate program here at OSU and am on track to recieve my BS in
               Computer Science in 2024. My best classes so far include Software Engineering I & II, Database
               Administration, and
-              Cloud Application Development. Cloud Application Development and Software Engineering I allowed me to create the EZPZ URL Shortener, which is a URL shortener/QR code 
-              generator that includes analytics and Auth0 login. The backend is written in Go with Gin and hosted on Google Cloud while the frontend is a SvelteKit 
-              project hosted on Cloudflare pages at the URL <a href="https://shqrl.co" style="color: #b10404; font: lato, sans-serif 16px;">shqrl.co</a>. </p>
+              Cloud Application Development. Cloud Application Development and Software Engineering I allowed me to
+              create the EZPZ URL Shortener, which is a URL shortener/QR code
+              generator that includes analytics and Auth0 login. The backend is written in Go with Gin and hosted on
+              Google Cloud while the frontend is a SvelteKit
+              project hosted on Cloudflare pages at the URL <a href="https://shqrl.co" target="_blank"
+                style="color: #b10404; font: lato, sans-serif 16px;">shqrl.co</a>. </p>
           </div>
           <div class="biog">
             <p>I currently work as the E-Commerce Product Data Coordinator at LA Balloons, which has very effectively
@@ -90,29 +93,71 @@
     <div class="screen3 inner" id="three">
       <div class="page">
         <div class="whole" id="wh3">
-          <div class="heading">About Me:</div>
-          <div class="biog">
-            <p>I am an aspiring software engineer and a third year standing Computer Science student at Oregon State
-              University. I am in the post-baccalaureate program here at OSU and am on track to recieve my BS in Winter
-              to Spring of 2024. Outside of my coursework, I completed the Promineo Tech Backend Coding Bootcamp, am
-              teaching myself frontend programming fundementals via The Odin Project, and work on practice programming
-              problems with Leetcode. </p>
+          <div class="heading">Projects:</div>
+          <div class="proj">
+            <h3>EZPZ URL Shortener: <a href="https://shqrl.co" target="_blank"
+              style="color: #b10404; font: lato, sans-serif; font-size: 1em;">shqrl.co</a></h3>
+            <div class="projdetails">
+              <div class="imgline">
+                <a href="https://shqrl.co" target="_blank"><img class="projimg" src="./assets/ezpz.png" alt="ezpz logo"> </a>
+                <a href="https://github.com/kopatsis/cs361frontend" target="_blank"><img class="projimg" src="./assets/git.png" alt="github logo"> </a>
+              </div>
+              
+              <ul class="projectlist">
+
+                <li>SvelteKit project that generates non-expiring shortened URLs with click analytics tracking and QR
+                  Code generation
+                  in addition to persistent storage of past generated URLs which includes search filtration and
+                  soft-deletion of entries</li>
+                <li>Utilized Auth0 as provider on front-end for optional login/logout using email, Google, and other SSO
+                  providers</li>
+                <li>Created API microservice for analytics and persistent URL storage with Go/Gin, hosted on Google
+                  Cloud</li>
+                <li>Used Cloudflare Pages for custom domain and automatic production deployment for GitHub repository
+                  commits</li>
+              </ul>
+            </div>
+
           </div>
-          <div class="biog">
-            <p>I currently reside in the Los Angeles area and I am open to work anywhere in the US. My background was
-              initially in Business Administration, as I got my degree in that field from Cal Poly SLO and worked for
-              the City of LA until early 2021, when I spent a year working in EMS. Following that, I began my
-              self-taught programming journey in addition to my second bachelor's degree in Computer Science in early
-              2022. To check word count, simply place your cursor into the text box above and start typing.
-            </p>
+          <div class="proj">
+            <h3>Balloon REST API: <a href="./assets/KopatsisBalloonAPI.pdf" download target="_blank"
+              style="color: #b10404; font: lato, sans-serif; font-size: 1em;">Spec PDF</a></h3>
+            <div class="projdetails">
+              <div class="imgline">
+                <a href="./assets/KopatsisBalloonAPI.pdf" download target="_blank"><img class="projimg" src="./assets/balloon.png" alt="balloon logo"> </a>
+                <a href="https://github.com/kopatsis" target="_blank"><img class="projimg" src="./assets/git.png" alt="github logo"> </a>
+              </div>
+              
+              <ul class="projectlist">
+
+                <li>REST API created with Go and Gin Gonic to model balloon, collection, and user entities with relationships, using
+                  JWT verification for protected endpoints for CRUD operations, connected to Google Cloud Datastore</li>
+                <li>Utilized Auth0 as provider on front-end for user login/logout and JWT generation, used in protected endpoints</li>
+                <li>Created Docker container for API for deployment on Google Compute Engine instance
+                </li>
+                <li>Used Postman to make and export comprehensive test suite for all endpoints and functionalities</li>
+              </ul>
+            </div>
+
           </div>
-          <div class="biog">
-            <p>
-              Feel free to check out any of my projects by clicking the tab above, or view my Resume, GitHub profile, or
-              Linkedin by clicking the respective links. My email and phone contact information is also listed at the
-              bottom of this page. The Auto-Save feature will make sure you won't lose any changes while editing, even
-              if you leave the site and come back later. Tip: Bookmark this page now.
-            </p>
+          <div class="proj">
+            <h3>i9 Fitness: <a href="https://github.com/kopatsis/i9-backend" target="_blank"
+              style="color: #b10404; font: lato, sans-serif; font-size: 1em;">GitHub Link</a></h3>
+            <div class="projdetails">
+              <div class="imgline">
+                <a href="https://github.com/kopatsis/i9-backend" target="_blank"><img class="projimg" src="./assets/i9.png" alt="i9 logo"> </a>
+                <a href="https://github.com/kopatsis/i9-backend" target="_blank"><img class="projimg" src="./assets/git.png" alt="github logo"> </a>
+              </div>
+              
+              <ul class="projectlist">
+
+                <li>Developed application for intelligently generated bodyweight high intensity interval training routines based on user levels and workout history, with constant adaptation to user feedback</li>
+                <li>Go and Gin Gonic utilized for backend and API routes in addition to MongoDB for exercise and user database</li>
+                <li>AWS Cognito used for user login/logout as well as resource protection for private endpoints</li>
+                <li>[In progress] front-end using SvelteKit for web, adapted with Capacitor for mobile and Electron for desktop</li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </div>
@@ -120,7 +165,7 @@
     <div class="screen4 inner" id="four">
       <div class="page">
         <div class="whole" id="wh4">
-          <div class="heading">Feel free to view/download my resume here:</div>
+          <div class="heading">Feel free to view/download my resume here: <a href="./assets/Kopatsis_Resume.pdf" download target="_blank"><img src="./assets/downloadb.png" alt="download logo" style="height: 1em; width: 1em;"> </a></div>
           <iframe src="./assets/Kopatsis_Resume.pdf" width="100%" height="660px"></iframe>
         </div>
       </div>
@@ -129,14 +174,14 @@
 
   <div class="foothold">
     <footer class="footbar">
-      <ul>
-        <li><a href="https://github.com/kopatsis" target="_blank"><img src="./assets/ic1.png" alt="github logo"
+      <ul class="banners">
+        <li class="banners"><a href="https://github.com/kopatsis" target="_blank"><img src="./assets/ic1.png" alt="github logo"
               class="footerimg"></a></li>
-        <li><a href="https://www.linkedin.com/in/demetrios-j-kopatsis" target="_blank"><img src="./assets/ic2.png"
+        <li class="banners"><a href="https://www.linkedin.com/in/demetrios-j-kopatsis" target="_blank"><img src="./assets/ic2.png"
               alt="linkedin logo" class="footerimg"></a></li>
-        <li><a href="mailto:d@kopatsis.com" target="_blank"><img src="./assets/ic3.png" alt="email logo"
+        <li class="banners"><a href="mailto:d@kopatsis.com" target="_blank"><img src="./assets/ic3.png" alt="email logo"
               class="footerimg"></a></li>
-        <li><img src="./assets/ic4a.png" alt="brightness logo" class="footerimg modeswitch lightmode"></li>
+        <li class="banners"><img src="./assets/ic4a.png" alt="brightness logo" class="footerimg modeswitch lightmode"></li>
       </ul>
     </footer>
   </div>
