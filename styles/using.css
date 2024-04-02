@@ -240,13 +240,12 @@ body {
     -webkit-transform: translateY(25px);
     transition: transform 0.5s, opacity 0.9s;
     -webkit-transition: -webkit-transform 0.5s, opacity 0.9s;
+}
 
-    &.loaded {
+.loadin.loaded{
         opacity: 1;
         transform: translateY(0);
         -webkit-transform: translateY(0);
-        transition-delay: 0.3s;
-    }
 }
 
 .p1content {
@@ -281,6 +280,9 @@ img.headshot{
 }
 
 @keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
     70% {
         transform: translateY(0%);
     }

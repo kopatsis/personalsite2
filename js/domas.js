@@ -73,15 +73,15 @@ var fadeIn = () => {
     const elementsToLoadIn = new Set([...document.querySelectorAll(".whole"), ...document.querySelectorAll("#title"), ...document.querySelectorAll(".buttonhold")])
 
 
-    if (isMobileBrowser()) {
-        elementsToLoadIn.forEach((el) => {
-            el.classList.add('loadin loaded');
-        });
-    } else {
+    // if (isMobileBrowser()) {
+    //     elementsToLoadIn.forEach((el) => {
+    //         el.classList.add('loadin loaded');
+    //     });
+    // } else {
         elementsToLoadIn.forEach((el) => {
             el.classList.add('loadin');
         });
-    }
+    // }
 
     const observerOptions = {
         root: null,
