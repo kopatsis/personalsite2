@@ -63,12 +63,25 @@ var idColor = () => {
     screens.forEach((el) => observer2.observe(el));
 }
 
+function isMobileBrowser() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+}
+
 
 var fadeIn = () => {
     const elementsToLoadIn = new Set([...document.querySelectorAll(".whole"), ...document.querySelectorAll("#title"), ...document.querySelectorAll(".buttonhold")])
-    elementsToLoadIn.forEach((el) => {
-        el.classList.add('loadin');
-    });
+
+
+    if (isMobileBrowser()) {
+        elementsToLoadIn.forEach((el) => {
+            el.classList.add('loadin loaded');
+        });
+    } else {
+        elementsToLoadIn.forEach((el) => {
+            el.classList.add('loadin');
+        });
+    }
 
     const observerOptions = {
         root: null,
